@@ -6,8 +6,8 @@ const print = std.debug.print;
 pub const command = common.Command{ .name = "add", .description = "Create a new SSH tunnel", .handler = handler, .usage = 
 \\-h, --help                 Display this help and exit
 \\-l, --local <port>         The local port to bind to
-\\-r, --remote <port>        The host port to connect to
-\\<remote_host>              The host to connect to
+\\-r, --remote <port>        The remote host port to connect to
+\\<remote_host>              The remote host to connect to
 \\
 };
 

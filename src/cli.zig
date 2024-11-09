@@ -40,6 +40,12 @@ pub fn cli() !void {
     var res = clap.parseEx(clap.Help, &main_params, main_parsers, &iter, .{
         .diagnostic = &diag,
         .allocator = allocator,
+
+        // TODO this is basically fucked until I can get on the right version.
+        // Clap only supports this on master, which requires Zig master.
+        // And Zig master requires LLVM 19 - which isn't on Arch yet.
+        // Come back to this.
+        // .terminating_positional = 0,
     }) catch |err| {
         try diag.report(std.io.getStdErr().writer(), err);
         return err;
